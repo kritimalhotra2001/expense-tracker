@@ -1,18 +1,18 @@
 import React from "react";
 import ExpenseItem from "./ExpenseItem";
 
-function ExpenseList() {
-  const Expense = [
-    { id: 1, name: "shopping", cost: 2000 },
-    { id: 2, name: "diet", cost: 200 },
-    { id: 3, name: "travelling", cost: 200 },
+export const ExpenseList = () => {
+  const expenses = [
+    { id: 12, name: "shopping", cost: 40 },
+    { id: 13, name: "holiday", cost: 400 },
+    { id: 14, name: "car service", cost: 50 },
   ];
+
   return (
-    <ul className="listgroup">
-      {Expense.map((Expense) => (
-        <ExpenseItem id={Expense.id} name={Expense.name} cost={Expense.cost} />
+    <ul className="list-group">
+      {expenses.map((expense) => (
+        <ExpenseItem id={expense.id} name={expense.name} cost={expense.cost} />
       ))}
     </ul>
   );
-}
-export default ExpenseList;
+};
