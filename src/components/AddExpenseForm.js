@@ -21,12 +21,10 @@ const AddExpenseForm = () => {
           ></input>
         </div>
       </div>
-      <div className="row">
-        <div className="col-sm">
-          <button type="submit" className="btn btn-primary mt-3">
-            Save
-          </button>
-        </div>
+      <div class="d-grid">
+        <button type="submit" class="btn btn-primary btn-block mt-3">
+          Save
+        </button>
       </div>
     </form>
   );
