@@ -5,7 +5,7 @@ import ExpenseTotal from "./compoments/ExpenseTotal";
 import { ExpenseList } from "./compoments/ExpenseList";
 import { AddExpenseForm } from "./compoments/AddExpenseForm";
 
-function App() {
+const App = () => {
   return (
     <div className="container border p-3 my-5">
       <Header />
@@ -36,6 +36,6 @@ function App() {
       </div>
     </div>
   );
-}
+};
 
 export default App;
