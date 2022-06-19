@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import Header from "./components/Header";
 import Budget from "./components/Budget";
 import Remaining from "./components/Remaining";
@@ -12,6 +12,17 @@ const App = () => {
     { id: 2, name: "Holiday", cost: 400 },
     { id: 3, name: "Car Service", cost: 50 },
   ]);
+
+  // Add Expense
+  const addExpense = (expense) => {
+    const id = Math.floor(Math.random() * 10000) + 1;
+    const newExpense = { id, ...expense };
+    setExpenses([...expenses, newExpense]);
+  };
+  // Delete Expense
+  const deleteExpense = (id) => {
+    setExpenses(expenses.filter((expense) => expense.id !== id));
+  };
 
   return (
     <div className="container border p-3 my-5">
@@ -36,13 +47,13 @@ const App = () => {
       <h3 className="mt-3">Expenses</h3>
       <div className="row mt-3">
         <div className="col-sm">
-          <ExpenseList expenses={expenses} />
+          <ExpenseList expenses={expenses} onDelete={deleteExpense} />
         </div>
       </div>
       <h3 className="mt-3">Add Expense</h3>
       <div className="row mt-3">
         <div className="col-sm">
-          <AddExpenseForm />
+          <AddExpenseForm onAdd={addExpense} />
         </div>
       </div>
     </div>
