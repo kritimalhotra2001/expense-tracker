@@ -3,6 +3,7 @@ import PropTypes from "prop-types"; //shortcut - impt tab
 const Header = ({ title }) => {
   return (
     <header>
+      {/* inline style add style = {headingStyle} */}
       <h1>{title}</h1>
     </header>
   );
@@ -15,7 +16,12 @@ Header.defaultProps = {
 
 // proptypes are used to make code more robust as we define prop/attribute type
 Header.propTypes = {
-  title: PropTypes.string,
+  title: PropTypes.string.isRequired,
 };
 
+// CSS in JS
+// const headingStyle = {
+//   color: "red",
+//   backgroundColor: 'black'
+// }
 export default Header;
