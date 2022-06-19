@@ -1,14 +1,18 @@
-import { Header } from "./compoments/Header";
+import Header from "./compoments/Header";
 import Budget from "./compoments/Budget";
 import Remaining from "./compoments/Remaining";
 import ExpenseTotal from "./compoments/ExpenseTotal";
-import { ExpenseList } from "./compoments/ExpenseList";
-import { AddExpenseForm } from "./compoments/AddExpenseForm";
+import ExpenseList from "./compoments/ExpenseList";
+import AddExpenseForm from "./compoments/AddExpenseForm";
 
 const App = () => {
   return (
     <div className="container border p-3 my-5">
-      <Header />
+      {/* Using props in header */}
+      {/* If we give prop type as number console error will be there as 
+        we have mentioned title as string in header file
+       */}
+      <Header title="Expense Tracker" />
       <div className="container">
         <div className="row mt-3">
           <div className="col-sm">

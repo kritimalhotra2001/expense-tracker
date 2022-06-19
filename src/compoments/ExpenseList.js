@@ -1,11 +1,10 @@
-import React from "react";
 import ExpenseItem from "./ExpenseItem";
 
-export const ExpenseList = () => {
+const ExpenseList = () => {
   const expenses = [
-    { id: 12, name: "Shopping", cost: 40 },
-    { id: 13, name: "Holiday", cost: 400 },
-    { id: 14, name: "Car Service", cost: 50 },
+    { id: 1, name: "Shopping", cost: 40 },
+    { id: 2, name: "Holiday", cost: 400 },
+    { id: 3, name: "Car Service", cost: 50 },
   ];
 
   return (
@@ -16,3 +15,5 @@ export const ExpenseList = () => {
     </ul>
   );
 };
+
+export default ExpenseList;

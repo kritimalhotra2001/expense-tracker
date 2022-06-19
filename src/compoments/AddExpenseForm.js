@@ -1,11 +1,9 @@
-import React from "react";
-
-export const AddExpenseForm = () => {
+const AddExpenseForm = () => {
   return (
     <form>
       <div className="row">
         <div className="col-sm">
-          <label for="name">Name</label>
+          <label htmlFor="name">Name</label>
           <input
             required="required"
             type="text"
@@ -14,7 +12,7 @@ export const AddExpenseForm = () => {
           ></input>
         </div>
         <div className="col-sm">
-          <label for="cost">Cost</label>
+          <label htmlFor="cost">Cost</label>
           <input
             required="required"
             type="text"
@@ -33,3 +31,5 @@ export const AddExpenseForm = () => {
     </form>
   );
 };
+
+export default AddExpenseForm;
