@@ -7,6 +7,7 @@ import ExpenseList from "./components/ExpenseList";
 import AddExpenseForm from "./components/AddExpenseForm";
 
 const App = () => {
+  const [showAddExpense, setShowAddExpense] = useState(false);
   const [expenses, setExpenses] = useState([
     { id: 1, name: "Shopping", cost: 40 },
     { id: 2, name: "Holiday", cost: 400 },
@@ -30,7 +31,17 @@ const App = () => {
       {/* If we give prop type as number console error will be there as 
         we have mentioned title as string in header file
        */}
-      <Header title="Expense Tracker" />
+      <Header
+        title="Expense Tracker"
+        onAdd={() => setShowAddExpense(!showAddExpense)}
+      />
+      {showAddExpense && (
+        <div className="row">
+          <div className="col-sm">
+            <AddExpenseForm onAdd={addExpense} />
+          </div>
+        </div>
+      )}
       <div className="container">
         <div className="row mt-3">
           <div className="col-sm">
@@ -48,12 +59,6 @@ const App = () => {
       <div className="row mt-3">
         <div className="col-sm">
           <ExpenseList expenses={expenses} onDelete={deleteExpense} />
-        </div>
-      </div>
-      <h3 className="mt-3">Add Expense</h3>
-      <div className="row mt-3">
-        <div className="col-sm">
-          <AddExpenseForm onAdd={addExpense} />
         </div>
       </div>
     </div>

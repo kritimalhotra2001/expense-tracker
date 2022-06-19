@@ -1,11 +1,19 @@
 import PropTypes from "prop-types"; //shortcut - impt tab
 
-const Header = ({ title }) => {
+const Header = ({ title, onAdd }) => {
   return (
-    <header>
-      {/* inline style add style = {headingStyle} */}
-      <h1>{title}</h1>
-    </header>
+    <div className="d-flex justify-content-between">
+      <header>
+        <h1>{title}</h1>
+      </header>
+      <button
+        type="button"
+        className="btn btn-success btn-sm my-2"
+        onClick={onAdd}
+      >
+        Add Expense
+      </button>
+    </div>
   );
 };
 
